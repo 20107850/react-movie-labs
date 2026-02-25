@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -11,6 +10,19 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import img from '../../images/pexels-dziana-hasanbekava-5480827.jpg';
 import React, {useState, useEffect}  from "react";
+
+const formControl = 
+  {
+    margin: 1,
+    minWidth: "90%",
+    backgroundColor: "rgb(255, 255, 255)"
+  };
+
+
+export default function FilterMoviesCard(props) {
+
+ const [genres, setGenres] = useState([{ id: '0', name: "All" }])
+
 useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
@@ -37,19 +49,6 @@ useEffect(() => {
   const handleGenreChange = e => {
     handleChange(e, "genre", e.target.value)
   };
-
-const formControl = 
-  {
-    margin: 1,
-    minWidth: "90%",
-    backgroundColor: "rgb(255, 255, 255)"
-  };
-
-
-export default function FilterMoviesCard(props) {
-
- const [genres, setGenres] = useState([{ id: '0', name: "All" }])
-
 
   return (
     <Card 
