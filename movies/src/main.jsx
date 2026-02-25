@@ -5,6 +5,7 @@ import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
+import { BrowserRouter, Route, Navigate, Routes } from "react-router";
 
 const App = () => {
   return (
