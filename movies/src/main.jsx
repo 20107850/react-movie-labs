@@ -9,6 +9,8 @@ import { BrowserRouter, Route, Navigate, Routes } from "react-router";
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import MoviesContextProvider from "./contexts/moviesContext";
+import AddMovieReviewPage from './pages/addMovieReviewPage'
+        <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
 
 const queryClient = new QueryClient({
   defaultOptions: {
