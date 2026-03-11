@@ -14,4 +14,3 @@ const MovieList = (props) => {
 };
 
 export default MovieList;
-export default function MovieCard({ movie, action }) {
