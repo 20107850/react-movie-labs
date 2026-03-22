@@ -7,7 +7,9 @@ import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { useNavigate } from "react-router";
+
+import { useNavigate } from "react-router-dom";
+
 import { styled } from '@mui/material/styles';
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -27,7 +29,9 @@ const menuOptions = [
   { label: "Home", path: "/" },
   { label: "Favorites", path: "/movies/favorites" },
   { label: "Upcoming", path: "/movies/upcoming" },
-  { label: "Option 4", path: "/" },
+  { label: "Now Playing", path: "/movies/now-playing" },
+  { label: "Popular", path: "/movies/popular" },
+  { label: "Top Rated", path: "/movies/top-rated" },
 ];
 
   const handleMenuSelect = (pageURL) => {
