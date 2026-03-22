@@ -109,7 +109,8 @@ export const getMovie = (args) => {
 
 
 
-export const fetchNowPlayingList = () => {
+
+export const getNowPlayingMovies = () => {
   return fetch(
     `https://api.themoviedb.org/3/movie/now_playing?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
   ).then((response) => {
@@ -119,12 +120,13 @@ export const fetchNowPlayingList = () => {
       });
     }
     return response.json();
-  }).catch((error) => {
+  })
+  .catch((error) => {
     throw error;
   });
 };
 
-export const fetchPopularList = () => {
+export const getPopularMovies = () => {
   return fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
   ).then((response) => {
@@ -134,12 +136,13 @@ export const fetchPopularList = () => {
       });
     }
     return response.json();
-  }).catch((error) => {
+  })
+  .catch((error) => {
     throw error;
   });
 };
 
-export const fetchTopRatedList = () => {
+export const getTopRatedMovies = () => {
   return fetch(
     `https://api.themoviedb.org/3/movie/top_rated?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
   ).then((response) => {
@@ -149,15 +152,15 @@ export const fetchTopRatedList = () => {
       });
     }
     return response.json();
-  }).catch((error) => {
+  })
+  .catch((error) => {
     throw error;
   });
 };
 
-export const fetchRecommendedMovies = ({ queryKey }) => {
+export const getMovieRecommendations = ({ queryKey }) => {
   const [, idPart] = queryKey;
   const { id } = idPart;
-
   return fetch(
     `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
   ).then((response) => {
@@ -167,15 +170,15 @@ export const fetchRecommendedMovies = ({ queryKey }) => {
       });
     }
     return response.json();
-  }).catch((error) => {
+  })
+  .catch((error) => {
     throw error;
   });
 };
 
-export const fetchCastDetails = ({ queryKey }) => {
+export const getMovieCredits = ({ queryKey }) => {
   const [, idPart] = queryKey;
   const { id } = idPart;
-
   return fetch(
     `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US`
   ).then((response) => {
@@ -185,7 +188,8 @@ export const fetchCastDetails = ({ queryKey }) => {
       });
     }
     return response.json();
-  }).catch((error) => {
+  })
+  .catch((error) => {
     throw error;
   });
 };
