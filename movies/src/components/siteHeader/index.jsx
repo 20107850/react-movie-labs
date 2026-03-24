@@ -46,7 +46,7 @@ const menuOptions = [
 
   return (
     <>
-      <AppBar position="fixed" sx={{ backgroundColor: "#c62828" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: "red" }}>
         <Toolbar>
           <Typography variant="h4" sx={{ flexGrow: 1 }}>
             TMDB Client
