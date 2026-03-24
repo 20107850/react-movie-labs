@@ -27,18 +27,22 @@ const MovieCredits = ({ movie }) => {
 
   const cast = data.cast ? data.cast.slice(0, 5) : [];
 
-  return (
-    <>
-      <h3>Cast</h3>
-      <ul>
+return (
+  <Accordion sx={{ marginTop: 2 }}>
+    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+      <Typography variant="h6">Cast</Typography>
+    </AccordionSummary>
+    <AccordionDetails>
+      <List>
         {cast.map((person) => (
-          <li key={person.credit_id}>
-            {person.name} as {person.character}
-          </li>
+          <ListItem key={person.credit_id || person.cast_id} disablePadding>
+            <ListItemText primary={`${person.name} as ${person.character}`} />
+          </ListItem>
         ))}
-      </ul>
-    </>
-  );
+      </List>
+    </AccordionDetails>
+  </Accordion>
+);
 };
 
 export default MovieCredits;
